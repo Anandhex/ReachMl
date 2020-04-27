@@ -102,6 +102,7 @@ def get_interests(age,gender):
     interest_id = list(map(lambda x:interest_id_dict[x],output["Final Interests"]))
     output["Interests Ids"] = interest_id
     output["Interests-Id"] = interest_id_dict
+    print(output)
     return jsonify(output)
 
 
@@ -144,7 +145,7 @@ def predict_interest():
 
     inte = copy.deepcopy(list(interest_id_dict.keys()))
     random.shuffle(inte)
-
+    print(inte[:3])
     return jsonify({"interests":inte[:3]})
 
 
